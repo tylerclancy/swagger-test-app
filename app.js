@@ -15,8 +15,13 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
-app.get('/', (req, res) => {
-  res.send('Hello world!');
+app.get('/books', (req, res) => {
+  res.send([{
+    isbn: '9781781100486',
+    title: 'Harry Potter and the Sorcerer\'s Stone',
+    author: 'J.K. Rowling',
+    publisher: 'Scholastic'
+  }])
 });
 
 app.listen(3000, () => {
