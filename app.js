@@ -10,7 +10,7 @@ const swaggerOptions = {
       version: '1.0.0'
     }
   },
-  apis: ['app.js'];
+  apis: ['app.js']
 };
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
