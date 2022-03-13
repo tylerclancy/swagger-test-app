@@ -13,6 +13,7 @@ const swaggerOptions = {
   apis: ['app.js'];
 };
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 app.get('/', (req, res) => {
   res.send('Hello world!');
