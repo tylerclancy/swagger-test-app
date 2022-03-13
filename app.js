@@ -15,6 +15,13 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
+/**
+* @swagger
+* /books:
+*   get:
+*     description: Get all books
+*
+*/
 app.get('/books', (req, res) => {
   res.send([{
     isbn: '9781781100486',
