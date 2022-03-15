@@ -3,6 +3,11 @@ const app = express();
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
 
+// Data parser - used to parse post data
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
