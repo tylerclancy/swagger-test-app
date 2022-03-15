@@ -36,6 +36,11 @@ app.get('/books', (req, res) => {
   }])
 });
 
+app.post('/book', (req, res) => {
+  const title = req.body.title;
+  res.send({ title });
+})
+
 app.listen(3000, () => {
   console.log('Server started on port 3000!');
 });
