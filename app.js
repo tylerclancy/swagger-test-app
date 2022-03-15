@@ -36,10 +36,25 @@ app.get('/books', (req, res) => {
   }])
 });
 
+/**
+ * @swagger
+ * /book:
+ *   post:
+ *     description: Get one book.
+ *     parameters:
+ *      - name: title
+ *        description: Book title
+ *        in: body
+ *        required: true
+ *        type: string
+ *     responses:
+ *       200:
+ *         description: Success
+ */
 app.post('/book', (req, res) => {
   const title = req.body.title;
   res.send({ title });
-})
+});
 
 app.listen(3000, () => {
   console.log('Server started on port 3000!');
