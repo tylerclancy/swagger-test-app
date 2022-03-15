@@ -25,7 +25,9 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 * /books:
 *   get:
 *     description: Get all books
-*
+*     responses:
+*       200:
+*         description: Success
 */
 app.get('/books', (req, res) => {
   res.send([{
